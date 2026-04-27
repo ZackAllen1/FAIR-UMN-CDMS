@@ -90,8 +90,8 @@ def load_data(path,holdout=None,batch_size=32,random_state=790234):
     x_data = torch.from_numpy(x_data_scaled).permute(0, 2, 1).float()
 
     if holdout is None:
-        train_loader,test_loader = hold_out_percent(x_data,y_data,test_size=0.20,random_state=random_state,batch_size=batch_size)
+        train_loader,train_val_loader,test_loader = hold_out_percent(x_data,y_data,test_size=0.20,random_state=random_state,batch_size=batch_size)
     else:
-        train_loader,test_loader = hold_out_values(x_data, y_data, holdout,0.01,batch_size=batch_size)
+        train_loader,train_val_loader,test_loader = hold_out_values(x_data, y_data, holdout,0.01,batch_size=batch_size)
 
-    return train_loader,test_loader
+    return train_loader,train_val_loader,test_loader

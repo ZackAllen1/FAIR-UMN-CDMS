@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 
-class ThermalAttentionHead(nn.Module):
+class ThermalAttention(nn.Module):
     def __init__(self, d_model, head_dim):
         super().__init__()
         self.q = nn.Linear(d_model, head_dim)
@@ -35,7 +35,7 @@ class ThermalAttentionHead(nn.Module):
         return torch.matmul(attn_weights, value)
 
 
-class ThermalTransformerRegressor(nn.Module):
+class ThermalTransformer(nn.Module):
     def __init__(self, input_dim=5, d_model=64, nhead=4, max_seq_len=500):
         super().__init__()
         self.d_model = d_model
@@ -53,7 +53,7 @@ class ThermalTransformerRegressor(nn.Module):
         self.pos_embedding = nn.Parameter(torch.randn(1, max_seq_len + 1, d_model))
         #Multi head attention with one head for each input signal sequence.
         self.heads = nn.ModuleList([
-            ThermalAttentionHead(d_model, self.head_dim) for i in range(nhead)
+            ThermalAttention(d_model, self.head_dim) for i in range(nhead)
         ])
         
         self.out_projection = nn.Linear(d_model, d_model)
