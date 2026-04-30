@@ -1,1 +1,2 @@
 4/11/2026 - Data Augmentation Scripts & Writeups - rclair7
+4/25/2026 - Per-class RMSE calculations and tests of simpler models using augmented data - ZackAllen1

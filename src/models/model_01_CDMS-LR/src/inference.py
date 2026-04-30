@@ -17,12 +17,13 @@ y_norm = model_info['normalization']['y_norm']
 
 ## Now getting a random subset of data
 
-myDL = DL('../data/CDMS_Dataset.csv', sep=',')
+myDL = DL('../../../../data/full_dataset/full_data_correct_columns.csv', sep=',')
 X_train, X_test, y_train, y_test = myDL.split_data(split_type='random')
 X_train, X_test, y_train, y_test, x_mean, x_std = myDL.normalize_data(X_train, X_test, y_train, y_test,
                                                                       x_mean = x_mean,
                                                                       x_std  = x_std,
                                                                       y_norm = y_norm)
+print(X_train.columns)
 
 ## Now creating a LR model
 

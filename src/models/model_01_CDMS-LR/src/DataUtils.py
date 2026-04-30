@@ -4,8 +4,21 @@ from sklearn.model_selection import *
 
 
 class CDMS_DataLoader:
-    def __init__(self, loc, sep=','):
-        self.data = pd.read_csv(loc, sep)
+    def __init__(self, loc, with_amp=True, sep=','):
+        if isinstance(loc, list):
+            data_list = []
+            for l in loc:
+                data_list.append(pd.read_csv(l))
+            self.data = pd.concat(data_list)
+        else:
+            self.data = pd.read_csv(loc)
+
+        # drop any columns that contain 'amp'
+        if with_amp is False:
+            amp_cols = self.data.filter(like='amp').columns
+            print(f"Dropping {len(amp_cols)} columns: {amp_cols}")
+            self.data = self.data.drop(amp_cols, axis=1)
+
         self.features = list(self.data.columns)[1:]
         self.x_data = self.data.values[:,1:-1]
         self.y_data = self.data.values[:, -1]
@@ -28,6 +41,7 @@ class CDMS_DataLoader:
             x_mean = np.mean(X_train, axis = 0)
         if x_std == []:
             x_std  = np.std(X_train, axis = 0)
+            x_std[x_std == 0] = 1 
         if y_norm == []:
             y_norm = self.y_norm
         X_train = (X_train - x_mean)/x_std
