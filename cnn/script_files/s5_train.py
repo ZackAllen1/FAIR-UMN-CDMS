@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 # Import custom modules
 from s3_cnn_dataprep import cnn_main
-from s4_simpleCNN import TinyCNN, TwoBranchCNN
+from s4_simpleCNN import TwoBranchCNN
 
 def set_seed(seed = 42):
     random.seed(seed)
@@ -173,25 +173,6 @@ def evaluation_hos(model_path, test_loader, scaler_y, device):
             
     avg_test_rmse = float(np.sqrt(np.mean(test_sq_errors))) * float(scaler_y.scale_[0])
     print(f"HOS Test RMSE: {avg_test_rmse:.4f} mm")
-    
-    # inside evaluation_hos, after collecting predictions
-    # all_preds, all_targets = [], []
-    # with torch.no_grad():
-    #     for batch_x, batch_y in test_loader:
-    #         batch_x, batch_y = batch_x.to(device), batch_y.to(device)
-    #         preds = model(batch_x)
-    #         all_preds.append(preds.cpu().numpy())
-    #         all_targets.append(batch_y.cpu().numpy())
-
-    # preds = np.concatenate(all_preds).flatten() * scaler_y.scale_[0] + scaler_y.mean_[0]
-    # targets = np.concatenate(all_targets).flatten() * scaler_y.scale_[0] + scaler_y.mean_[0]
-
-    # for pos in [-12.502, -29.5, -41.9]:
-    #     mask = np.isclose(targets, pos)
-    #     rmse = np.sqrt(np.mean((preds[mask] - targets[mask])**2))
-    #     bias = np.mean(preds[mask] - targets[mask])
-    #     print(f'pos={pos:>8.3f} | n={mask.sum():>4d} | '
-    #         f'RMSE={rmse:>6.3f} mm | bias={bias:+.3f} mm')
 
 if __name__ == "__main__":
     
