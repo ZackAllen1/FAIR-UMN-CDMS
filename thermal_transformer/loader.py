@@ -59,7 +59,6 @@ def hold_out_percent(x_data,y_data,test_size=0.20,random_state=790234,batch_size
     y_test  = y_test_ten.clone().detach()
     
     train_dataset = TensorDataset(x_train, y_train)
-    test_dataset  = TensorDataset(x_test, y_test)
     
     train_loader = DataLoader(train_dataset,batch_size=batch_size,shuffle=True)
     full_train_dataset = train_loader.dataset
@@ -70,7 +69,7 @@ def hold_out_percent(x_data,y_data,test_size=0.20,random_state=790234,batch_size
     
     train_loader = DataLoader(train_subset, batch_size=32, shuffle=True)
     train_val_loader = DataLoader(val_subset, batch_size=32, shuffle=False)
-    test_loader  = DataLoader(test_dataset,batch_size=batch_size,shuffle=False)
+    test_loader  = DataLoader(TensorDataset(x_test, y_test),batch_size=batch_size,shuffle=False)
 
     return train_loader,train_val_loader,test_loader
 
