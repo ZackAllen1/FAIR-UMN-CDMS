@@ -126,7 +126,7 @@ class augmentor:
     
     def plotSignals(self,row):
         pulse = self.getPulses(row)
-        fig,axs = plt.subplots(1,4,figsize=(16,4))
+        fig,axs = plt.subplots(1,4,figsize=(20,4))
         fig2,axs2 = plt.subplots(1,5,figsize=(20,4))
         
         data_desc = ["Original Signal","Interpolated Signal","Noisy Interpolated","Noisy Output"]
