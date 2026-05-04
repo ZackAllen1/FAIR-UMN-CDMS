@@ -142,16 +142,18 @@ class augmentor:
             ct = 0
             for ax,t,v in zip(axs,plot_times,plot_voltages):
                 ax.plot(t,v,label=f"Pulse {d}")
-                ax.set_xlabel("Time")
-                ax.set_ylabel("Voltage")
-                ax.set_title(data_desc[ct])
-                ax.legend()
+                ax.set_xlabel("Time",size=16)
+                ax.set_ylabel("Voltage",size=16)
+                ax.set_title(data_desc[ct],size=18)
+                ax.tick_params(axis='both', labelsize=14)
+                ax.legend(fontsize=14)
                 axs2[i].plot(t,v,label=data_desc[ct])
                 ct += 1
-            axs2[i].set_xlabel("Time")
-            axs2[i].set_ylabel("Voltage")
-            axs2[i].set_title(f"Pulse {d}")
-            axs2[i].legend()
+            axs2[i].set_xlabel("Time",size=16)
+            axs2[i].set_ylabel("Voltage",size=16)
+            axs2[i].set_title(f"Pulse {d}",size=18)
+            axs2[i].tick_params(axis='both', labelsize=14)
+            axs2[i].legend(fontsize=12)
         
             
 class pulses:
