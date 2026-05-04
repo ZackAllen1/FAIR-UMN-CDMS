@@ -3,11 +3,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 from DataUtils import CDMS_DataLoader as DL
 from model import CDMS_LR
+import os
 
 
 ## Obtaining the dataset 
-
-myDL = DL('../data/CDMS_Dataset.csv', sep=',')
+print("Current wd of trainNsave.py:", os.getcwd())
+myDL = DL('../../../../data/full_dataset/full_data.csv', sep=',')
 X_train, X_test, y_train, y_test = myDL.split_data(split_type='label', 
                                                    labels = [-12.502, -29.5, -41.9])
 X_train, X_test, y_train, y_test, x_mean, x_std = myDL.normalize_data(X_train, X_test, y_train, y_test)

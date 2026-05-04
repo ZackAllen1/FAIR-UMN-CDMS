@@ -5,10 +5,11 @@ from torch import nn
 from matplotlib import pyplot as plt
 from DataUtils import *
 from model import *
+import os
 
 ## Getting the data
-
-DL = CDMS_DataLoader(loc='../data/CDMS_Dataset.csv', sep=',')
+print("Current wd of trainNsave.py:", os.getcwd())
+DL = CDMS_DataLoader(loc='../../../../Exercises/data/CDMS_Dataset.csv', sep=',')
 XY_train, XY_valid, XY_test = DL.split_data('label', [-12.502, -29.5, -41.9])
 XY_train, XY_valid, XY_test, x_mean, x_std = DL.normalize_data(XY_train, XY_valid, XY_test)
 
@@ -55,6 +56,14 @@ y_pred_2 = NNreg.predict(NNreg.XY_valid[:,:-1]).reshape(-1).cpu().detach().numpy
 plt.scatter(y_orig_2, y_pred_2, label='Validation data')
 plt.plot(y_orig_2, y_orig_2, color='k')
 plt.legend()
+
+# calculate per-label rmse for test class
+test_labels = np.unique(y_orig).tolist()
+per_label_rmse, class_sizes = NNreg.calculate_per_label_rmse(test_labels)
+
+for idx, result in enumerate(per_label_rmse.items()):
+    label, rmse = result
+    print("RMSE for y = {:.4f} (size={:,d}): {:.4f}".format(label, class_sizes[idx], rmse))
 
 ## Save model metadata
 

@@ -91,6 +91,22 @@ class CDMS_Regressor:
         
         return Train_Losses, Test_Losses, Validation_Losses
     
+    # Zack: calculate per-label rmse
+    def calculate_per_label_rmse(self, labels):
+        per_label_rmse = {}
+        class_sizes = []
+        for label in labels:
+            mask = (self.XY_test[:, -1] == label)
+            if torch.sum(mask) > 0:
+                y_true = self.XY_test[mask, -1]
+                
+                y_pred = self.predict(self.XY_test[mask, :-1]).reshape(-1)
+                class_sizes.append(y_pred.size(0))
+                rmse = torch.sqrt(torch.mean((y_true - y_pred)**2))
+                per_label_rmse[label] = float(rmse.cpu().detach().numpy())
+        
+        return (per_label_rmse, class_sizes)
+    
     def Save(self, fname, model, optimizer, epoch, loss):
         print("Saving Model on epoch {}".format(epoch))
         torch.save({

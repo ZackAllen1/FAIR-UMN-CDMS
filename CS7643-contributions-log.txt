@@ -1,1 +1,3 @@
 4/11/2026 - Data Augmentation Scripts & Writeups - rclair7
+4/25/2026 - Per-class RMSE calculations and tests of simpler models using augmented data - ZackAllen1
+4/25/2026 - Added new conda env fair_gpu_modern.yml that works on Python 3.12 instead of 3.6 - ZackAllen1
