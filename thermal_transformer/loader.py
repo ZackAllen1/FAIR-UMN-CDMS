@@ -43,8 +43,8 @@ def hold_out_values(x_data, y_data, values_to_withold, tolerance=0.1, batch_size
     val_size = len(full_train_dataset) - train_size
     train_subset, val_subset = random_split(full_train_dataset, [train_size, val_size])
     
-    train_loader = DataLoader(train_subset, batch_size=32, shuffle=True)
-    train_val_loader = DataLoader(val_subset, batch_size=32, shuffle=False)
+    train_loader = DataLoader(train_subset, batch_size=batch_size, shuffle=True)
+    train_val_loader = DataLoader(val_subset, batch_size=batch_size, shuffle=True)
     test_loader = DataLoader(TensorDataset(x_test, y_test), batch_size=batch_size, shuffle=False)
     
     return train_loader,train_val_loader,test_loader
@@ -68,7 +68,7 @@ def hold_out_percent(x_data,y_data,test_size=0.20,random_state=790234,batch_size
     train_subset, val_subset = random_split(full_train_dataset, [train_size, val_size])
     
     train_loader = DataLoader(train_subset, batch_size=32, shuffle=True)
-    train_val_loader = DataLoader(val_subset, batch_size=32, shuffle=False)
+    train_val_loader = DataLoader(val_subset, batch_size=32, shuffle=True)
     test_loader  = DataLoader(TensorDataset(x_test, y_test),batch_size=batch_size,shuffle=False)
 
     return train_loader,train_val_loader,test_loader
