@@ -1,0 +1,146 @@
+commit 19436d35ec2d41f35056fefcc612b72a4ee901a3
+Merge: b0246ff 63d7980 50a7f1c
+Author: Rob St.Clair <rob.q.stclair@gmail.com>
+Date:   Sun May 3 23:36:03 2026 -0500
+
+    Merge branches 'dev', 'cnn-patch-1' and 'aug-testing' into merged
+
+commit b0246ff3d712013fb11a5c52af1233dbfa703091
+Author: Rob St.Clair <rob.q.stclair@gmail.com>
+Date:   Sun May 3 23:33:11 2026 -0500
+
+    cleaned up augmentation bits
+
+commit a3a8a0e348d84816c2ea8353ef6e4ebc78989463
+Author: Rob St.Clair <rob.q.stclair@gmail.com>
+Date:   Sun May 3 23:27:46 2026 -0500
+
+    updated loader script
+
+commit 50a7f1cd5553fb85edcf9ef070a439ec70a1f476
+Author: ZackAllen1 <zackattacks1127@gmail.com>
+Date:   Sun May 3 15:31:21 2026 -0400
+
+    added final results spreadsheet
+
+commit 79c0c332b61b40f283f066a42c89cbd725541c95
+Author: ZackAllen1 <zackattacks1127@gmail.com>
+Date:   Sun May 3 15:29:15 2026 -0400
+
+    added gpu yml config for Python 3.12
+
+commit 1db0d6dea6e3f54e37c5e944bfedb2673c711fc5
+Author: Rob St.Clair <rob.q.stclair@gmail.com>
+Date:   Sun May 3 02:28:22 2026 -0500
+
+    Added helper script for combining augmented data into one file.
+
+commit a527a99c8067f0ff6492e79ed2892676785eed9b
+Author: Rob St.Clair <rob.q.stclair@gmail.com>
+Date:   Sun May 3 02:27:48 2026 -0500
+
+    Addeded trained model files and updated notebook
+
+commit f77479d6133d24d709aebfa8ebcf81dd4d4b77d1
+Author: Rob St.Clair <rob.q.stclair@gmail.com>
+Date:   Sun May 3 02:25:16 2026 -0500
+
+    Tweaked augmentation script and included data unscrambler.
+
+commit 7188f85a002c8206a5be0f96e3bcbe8a670d3eb3
+Author: Rob St.Clair <rob.q.stclair@gmail.com>
+Date:   Sat May 2 10:32:38 2026 -0500
+
+    Updated transformer data scripts
+
+commit 902c54de8ce1bb5ded2279d2517649e0ddcf73e3
+Author: ZackAllen1 <zackattacks1127@gmail.com>
+Date:   Thu Apr 30 19:22:20 2026 -0400
+
+    per-class rmse calculations and tests using augmented data
+
+commit 63d798020920f30df9059ca1ec51e8341a7f6702
+Author: Rob St.Clair <rob.q.stclair@gmail.com>
+Date:   Wed Apr 29 22:43:43 2026 -0500
+
+    Added unscrambled data
+
+commit 74c602c703b5095fd059a7041c4e0b508bc69d81
+Author: Rob St.Clair <rob.q.stclair@gmail.com>
+Date:   Mon Apr 27 00:19:08 2026 -0500
+
+    Added fix to loader
+
+commit 77b220b49f8fb4e2887b7b250a6e7487a036a977
+Author: Rob St.Clair <rob.q.stclair@gmail.com>
+Date:   Mon Apr 27 00:09:19 2026 -0500
+
+    Added some brief explanation comments.
+
+commit a67a64d1290517b0a992b71d5f84b2cb8709f96f
+Author: Rob St.Clair <rob.q.stclair@gmail.com>
+Date:   Sun Apr 26 23:57:08 2026 -0500
+
+    Added transformer model and notebook for training.
+
+commit b9e3d8b4507b54719dc4d1dd6cd26727a7c2c700
+Author: Rob St.Clair <rob.q.stclair@gmail.com>
+Date:   Sun Apr 26 23:54:07 2026 -0500
+
+    Added correct column data
+
+commit 950fcd220e25774b2af2f4fcf7057e6530dd0f40
+Author: Utsab <138394401+rishmit@users.noreply.github.com>
+Date:   Sun Apr 26 18:45:57 2026 -0400
+
+    uploaded the data files
+
+commit 8fae02ba03ed366cde34e401961212258d9acb53
+Author: Utsab <138394401+rishmit@users.noreply.github.com>
+Date:   Sun Apr 26 18:45:17 2026 -0400
+
+    Add README.md for data folder
+    
+    This folder contains the data needed to run the script files
+
+commit 39e07d3f4614e9c10f6645d44e35140c976d2743
+Author: Utsab <138394401+rishmit@users.noreply.github.com>
+Date:   Sun Apr 26 18:44:21 2026 -0400
+
+    Uploaded all the script files
+
+commit 24429c8a8c45acc2e20041ca8b5026a4ab615ae5
+Author: Utsab <138394401+rishmit@users.noreply.github.com>
+Date:   Sun Apr 26 18:43:34 2026 -0400
+
+    Add README.md for script files directory
+
+commit 6eca4796cc73a4e6357ee605f04a11c409affaad
+Author: Utsab <138394401+rishmit@users.noreply.github.com>
+Date:   Sun Apr 26 18:41:36 2026 -0400
+
+    Add goal for CNN RMSE target
+
+commit 11b5e5856747e6351922b1db369f8048cd55bda0
+Author: Rob St.Clair <rob.q.stclair@gmail.com>
+Date:   Sat Apr 11 20:11:44 2026 -0500
+
+    Added revised full dataset csv with correctly ordered columns
+
+commit d77f5740c6a91c8eeb7bf140301ba774d596ba00
+Author: Rob St.Clair <rob.q.stclair@gmail.com>
+Date:   Sat Apr 11 19:53:53 2026 -0500
+
+    Added contributions log file.
+
+commit 3f9d27af40e621dbb7ef816cf78d65e8606783ce
+Author: Robert St.Clair <rclair7@gatech.edu>
+Date:   Sat Apr 11 11:49:36 2026 -0500
+
+    Updated .gitignore
+
+commit cac737bc9a8d1a77884309d5d04d5fc25048c6d4
+Author: Robert St.Clair <rclair7@gatech.edu>
+Date:   Sat Apr 11 11:49:14 2026 -0500
+
+    Added data augmentation scripts.
